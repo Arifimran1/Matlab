@@ -1,0 +1,30 @@
+f = imread('D:\A study\3 2\Digital Image Processing\Experiment\lab2\positive.jpg');
+
+%size
+[x y n] = size(f); %get x, y , and n
+info = imfinfo('D:\A study\3 2\Digital Image Processing\Experiment\lab2\positive.jpg');
+L = 2 ^ (info.BitDepth / 3); %get L that is the high range of that image
+
+g = f;
+%calculate for image negative
+for i = 1 : 1 : x
+    for j = 1 : 1 : y
+        new = L - 1 - g(i, j, :);  
+        if(new < 0) %if less than zero
+            g(i,j,:) = 0;
+        end
+        if (new > L - 1) %if greater than L-1
+            g(i,j,:) =  L - 1;
+        end
+        
+            g(i,j,:) = new;
+    end
+end
+                
+
+imshow(f); %show image
+figure, %show another image
+imshow(g);
+
+subplot(1, 3, )
+

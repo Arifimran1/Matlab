@@ -1,0 +1,13 @@
+f= imread('D:\backgroundDefault.jpg.jpg');
+imshow(f);
+g = imread('D:\backgroundDefault.jpg.jpg');
+figure,imshow(g+f);
+disp(f);
+r = (f(:,:,1));
+figure,imshow(r);
+r = (f(:,:,1));
+figure,imshow();
+
+%size(f+6);
+%imshow(f+f+f);
+%[a,b,c] =figure(;;1);
